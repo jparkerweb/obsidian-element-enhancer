@@ -6,6 +6,10 @@ For example, if I wanted to change the color or appearacne of a specific list of
 
 This simple script will allow us to apply custom css classes to any adjacent _Markwon_ element for styling to our heart's content.
 
-### Instalation
+## Instalation
 1. Install the `Dataview` plugin and enable `JavaScript Queries`
   ![dataview](docs/dataview.png)
+2. copy the [+ scripts/obsidian-element-enhancer.js](./%2B%20scripts/obsidian-element-enhancer.js) file to your Obsidian vault (suggested to save it to a "./scripts" folder).
+
+## Usage
+1. 
