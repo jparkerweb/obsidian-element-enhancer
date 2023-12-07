@@ -33,3 +33,7 @@ For example, if I wanted to change the color or appearacne of a specific list of
 ## Example
 
   ![example](docs/example.png)
+
+---
+
+_note: live preview is not supported_
