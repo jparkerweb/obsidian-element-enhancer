@@ -34,6 +34,8 @@ For example, if I wanted to change the color or appearacne of a specific list of
 
   ![example](docs/example.png)
 
+  bullet cards in example can be found [here ⇢ obsidian-bullet-cards](https://github.com/jparkerweb/obsidian-bullet-cards/tree/main)
+
 ---
 
 _note: live preview is not supported_
