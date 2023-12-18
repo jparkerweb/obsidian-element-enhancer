@@ -6,7 +6,7 @@ console.info(` > https://github.dev/jparkerweb/obsidian-element-enhancer`);
 console.info(` > applying obsidian-element-enhancer classes, class targeter is '${input}'`);
 console.info(``);
 
-function debounce(func, wait, immediate) {
+function enhancerDebounce(func, wait, immediate) {
     var timeout;
     return function() {
         var context = this, args = arguments;
@@ -21,7 +21,7 @@ function debounce(func, wait, immediate) {
     };
 };
 
-const callback = debounce(function(mutationsList, observer) {
+function enhancerApply() {
 	const divs = document.querySelectorAll(`.markdown-reading-view div.${input}`) > 0 ? document.querySelectorAll(`.markdown-reading-view div.${input}`) : document.querySelectorAll(`div.${input}`);
 	// console.info(` > found ${divs.length} divs with class '${input}'`);
 
@@ -42,16 +42,29 @@ const callback = debounce(function(mutationsList, observer) {
 			});
 		}
 	});
+}
+
+
+const enhancerCallback = enhancerDebounce(function(mutationsList, observer) {
+    enhancerApply();
 }, 250);
 
-function attachObservers() {
+
+function enhancerAttachObservers() {
     const readingViewDivs = document.querySelectorAll('.markdown-reading-view'); // Adjust the selector as needed
     readingViewDivs.forEach(div => {
-        const observer = new MutationObserver(callback.bind(div));
+        const observer = new MutationObserver(enhancerCallback.bind(div));
         observer.observe(div, { childList: true, subtree: true });
     });
 }
 
+
 // Run this function initially and also whenever a tab change occurs
-// You may need additional logic to re-run attachObservers when tabs are changed
-attachObservers();
+// You may need additional logic to re-run enhancerAttachObservers when tabs are changed
+enhancerAttachObservers();
+
+
+setTimeout(() => {
+    //initial run after 500ms
+	enhancerApply();
+}, 500);
