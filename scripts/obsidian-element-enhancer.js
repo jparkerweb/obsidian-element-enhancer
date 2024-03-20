@@ -64,7 +64,8 @@ function enhancerAttachObservers() {
 enhancerAttachObservers();
 
 
+// initial run
+enhancerApply();
 setTimeout(() => {
-    //initial run after 500ms
 	enhancerApply();
-}, 500);
+}, 1000);
